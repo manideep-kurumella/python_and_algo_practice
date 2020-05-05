@@ -1,5 +1,6 @@
 #https://www.geeksforgeeks.org/array-rotation/
 #Write a function rotate(ar[], d, n) that rotates arr[] of size n by d elements.
+import array_util
 def euclid_gcd(a,b):
   if (a<=0 or b<=0):
     return 0
@@ -32,13 +33,11 @@ def main():
   '''print("Enter the array elements : ")
   arr = [int(i) for i in input().split()]
   n = len(arr)'''
-  n=int(input("enter the length of the array: "))
+  arr = array_util.get_array()
   d=int(input("Enter the displacement:"))
-  if(isinstance(n,int) and isinstance(d,int)):
-    if(n<=0 or d<=0):
-      print("Enter a valid input")
-      return
-  arr=list(int(num) for num in input("Enter the integer list elements ").strip().split(' '))[:n]
+  if isinstance(d,int) and d<=0 :
+    print("Enter a valid input")
+    return
   print("integer list before rotation : {}".format(arr))
   print("integer array after rotating left by {} positions {}".format(d,leftRotate(arr,d)))
 
